@@ -1,0 +1,18 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: 'logo search search search search';
+  gap:40px;
+
+  .logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .search {
+    grid-area: search;
+  }
+
+}

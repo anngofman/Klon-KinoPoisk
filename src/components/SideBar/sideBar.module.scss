@@ -1,0 +1,26 @@
+@import '../../consts/color.scss';
+
+.sideBar{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 64px;
+    padding-bottom: 40px;
+  nav{
+    display: flex;
+    flex-direction: column;
+    a{
+      color: #80858B;
+      &:active{
+        color: $System-Primary;
+      }
+      &:hover{
+        color: $System-Primary2;
+      }
+    }
+  }
+  .copyright{
+    color:$Contextual-Light;
+  }
+}
