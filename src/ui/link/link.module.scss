@@ -1,0 +1,26 @@
+@import '../../consts/color.scss';
+.navLink {
+  color: #80858B;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+
+  &:active {
+    svg{
+      path{
+        fill:$System-Primary;
+      }
+    }
+    color: $System-Primary;
+  }
+
+  &:hover {
+    svg{
+      path{
+        fill:$System-Primary2;
+      }
+    }
+    color: $System-Primary2;
+  }
+}
