@@ -1,0 +1,25 @@
+@import '../../consts/color.scss';
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $Background-Black;
+  color: white;
+
+  .about {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .authorized_icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $System-Primary;
+    border-radius: 10px;
+  }
+}

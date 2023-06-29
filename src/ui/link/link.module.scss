@@ -1,4 +1,5 @@
 @import '../../consts/color.scss';
+
 .navLink {
   color: #80858B;
   display: flex;
@@ -7,20 +8,30 @@
   gap: 20px;
 
   &:active {
-    svg{
-      path{
-        fill:$System-Primary;
+    p {
+      color: $System-Primary;
+    }
+
+    svg {
+      path {
+        fill: $System-Primary;
       }
     }
+
     color: $System-Primary;
   }
 
   &:hover {
-    svg{
-      path{
-        fill:$System-Primary2;
+    p {
+      color: $System-Primary2;
+    }
+
+    svg {
+      path {
+        fill: $System-Primary2;
       }
     }
+
     color: $System-Primary2;
   }
 }
