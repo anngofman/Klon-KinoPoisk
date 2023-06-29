@@ -25,7 +25,7 @@ const AboutUser = ({ text }: Props) => {
         <SelectUser/>
         </div>
         :
-        <Link to='/signIn' className={styles.signIn}>
+        <Link to='auth/signIn' className={styles.signIn}>
           <div className={styles.icon}>
             <UserIcon />
           </div>

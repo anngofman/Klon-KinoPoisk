@@ -4,6 +4,7 @@ import TrendsIcon from '../../assets/icons/TrendsIcon'
 import FavoritesIcon from '../../assets/icons/FavoritesIcon'
 import SerringIcon from '../../assets/icons/SerringIcon'
 import Link from '../../ui/link'
+import CopyRight from '../CopyRight'
 
 type Props = {
   className: string
@@ -31,9 +32,7 @@ const SideBar = ({ className }: Props) => {
           Setting
         </Link>
       </nav>
-      <div className={styles.copyright}>
-        <p>© All Rights Reserved</p>
-      </div>
+      <CopyRight />
     </div>
   )
 }

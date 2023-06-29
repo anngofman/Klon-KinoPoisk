@@ -1,17 +1,17 @@
 import styles from './layout.module.scss'
-import Header from '../components/Header'
-import SideBar from '../components/SideBar'
+import Header from '../../components/Header'
+import SideBar from '../../components/SideBar'
 import { Outlet } from 'react-router-dom'
-import Wrapper from '../components/Wrapper'
+import Wrapper from '../../components/Wrapper'
 
 
-const Layout = () => {
+const MainLayout = () => {
   return (
     <div className={styles.layout}>
       <Wrapper>
         <Header />
         <div className={styles.content}>
-          <SideBar className={styles.sideBar}/>
+          <SideBar className={styles.sideBar} />
           <div className={styles.outlet}>
             <Outlet />
           </div>
@@ -21,4 +21,4 @@ const Layout = () => {
   )
 }
 
-export default Layout
+export default MainLayout

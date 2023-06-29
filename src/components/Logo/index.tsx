@@ -1,5 +1,5 @@
 import LogoIcon from '../../assets/icons/LogoIcon'
-import Button from '../../ui/button'
+import Link from '../../ui/link'
 
 type Props = {
   className?: string
@@ -7,9 +7,9 @@ type Props = {
 
 const Logo = ({className}:Props) => {
   return (
-    <Button className={className}>
+    <Link to='/' className={className}>
     <LogoIcon/>
-  </Button>
+  </Link>
   )
 }
 

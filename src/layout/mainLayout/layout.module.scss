@@ -1,20 +1,22 @@
-@import '../consts/color.scss';
+@import '../../consts/color.scss';
 
-.layout{
+.layout {
   background-color: $Background-Black;
   height: 100%;
   width: 100%;
-  .content{
+
+  .content {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap:40px;
+    gap: 40px;
     grid-template-areas: 'sideBar outlet outlet outlet outlet outlet';
 
     .sideBar {
       grid-area: sideBar;
     }
-    .outlet{
+
+    .outlet {
       grid-area: outlet;
     }
   }

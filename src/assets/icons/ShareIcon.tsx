@@ -8,7 +8,7 @@ const ShareIcon = () => {
           <circle id="Ellipse 3" cx="7.54545" cy="11.6363" r="2.54545" stroke="white" strokeWidth="2" />
           <circle id="Ellipse 4" cx="16.4546" cy="6.54545" r="2.54545" stroke="white" strokeWidth="2" />
           <circle id="Ellipse 5" cx="16.4546" cy="16.7273" r="2.54545" stroke="white" strokeWidth="2" />
-          <path id="Vector 2" d="M13.9998 16L10.0908 13.5455M10.0908 10.5L13.9998 8" stroke="white" strokeWidth="2" stroke-linecap="round" />
+          <path id="Vector 2" d="M13.9998 16L10.0908 13.5455M10.0908 10.5L13.9998 8" stroke="white" strokeWidth="2" strokeLinecap="round" />
         </g>
       </g>
     </svg>

@@ -1,0 +1,27 @@
+@import '../../consts/color.scss';
+
+.layout {
+  background-color: $Background-Black;
+  height: 100%;
+  width: 100%;
+  background-image: url('../../assets/banner.png');
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+
+    .content {
+      color: white;
+
+      width: 100%;
+    }
+  }
+}

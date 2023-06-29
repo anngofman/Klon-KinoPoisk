@@ -1,12 +1,25 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Layout from '../layout';
+import MainLayout from '../layout/mainLayout';
+import AuthLayout from '../layout/authLayout';
+import SignInPage from '../pages/SignInPage';
+import SignUpPage from '../pages/SignUp';
+import ResetPasswordPage from '../pages/ResetPasswordPage';
+import NewPasswordPage from '../pages/NewPassword';
+
 
 const RoutesPages = () => {
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Layout/>}/>
-    </Routes>
+      <Routes>
+        <Route path='/' element={<MainLayout />}>
+        </Route>
+        <Route path='/auth' element={<AuthLayout />} >
+          <Route path='signIn' element={<SignInPage />} />
+          <Route path='signUp' element={<SignUpPage />} />
+          <Route path='resetPassword' element={<ResetPasswordPage />} />
+          <Route path='newPassword' element={<NewPasswordPage />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   )
 }

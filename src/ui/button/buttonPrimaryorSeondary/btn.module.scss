@@ -1,0 +1,44 @@
+@import '../../../consts/color.scss';
+.btn {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  height: 56px;
+
+  &.primaryButton {
+    background-color: $System-Primary;
+    color: $Contextual-Write;
+    border-radius: 10px;
+    height: 56px;
+
+    &:hover {
+      background-color: $System-Primary2;
+    }
+
+    &:disabled {
+      color: $Contextual-Light;
+      background-color: $System-Secondary;
+    }
+  }
+
+  &.secondaryButton {
+    background-color: $Background-Graphite;
+    color: $Contextual-Write;
+    border-radius: 10px;
+    height: 56px;
+
+    &:hover {
+      background-color: $Background-Graphite;
+      color: $Contextual-Light;
+    }
+
+    &.disabled {
+      color: $Contextual-Light;
+      background-color: $System-Secondary;
+    }
+  }
+}
