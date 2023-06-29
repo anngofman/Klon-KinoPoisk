@@ -1,26 +1,47 @@
 @import '../../consts/color.scss';
 
-.sideBar{
+.sideBar {
   display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    padding-top: 64px;
-    padding-bottom: 40px;
-  nav{
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 64px;
+  padding-bottom: 40px;
+  font-size: 18px;
+
+  nav {
     display: flex;
     flex-direction: column;
-    a{
+    gap: 40px;
+
+    .navLink {
       color: #80858B;
-      &:active{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+
+      &:active {
+        svg{
+          path{
+            fill:$System-Primary;
+          }
+        }
         color: $System-Primary;
       }
-      &:hover{
+
+      &:hover {
+        svg{
+          path{
+            fill:$System-Primary2;
+          }
+        }
         color: $System-Primary2;
       }
     }
   }
-  .copyright{
-    color:$Contextual-Light;
+
+  .copyright {
+    color: $Contextual-Light;
   }
 }

@@ -5,24 +5,28 @@ import TrendsIcon from '../../assets/icons/TrendsIcon'
 import FavoritesIcon from '../../assets/icons/FavoritesIcon'
 import SerringIcon from '../../assets/icons/SerringIcon'
 
-const SideBar = () => {
+type Props = {
+  className: string
+}
+
+const SideBar = ({ className }: Props) => {
 
   return (
-    <div className={styles.sideBar}>
+    <div className={`${styles.sideBar} ${className}`}>
       <nav>
-        <NavLink to='/'>
+        <NavLink to='/' className={styles.navLink}>
           <HomeIcon />
           Home
         </NavLink>
-        <NavLink to='/'>
+        <NavLink to='/' className={styles.navLink}>
           <TrendsIcon />
           Trends
         </NavLink>
-        <NavLink to='/'>
+        <NavLink to='/' className={styles.navLink}>
           <FavoritesIcon />
           Favorites
         </NavLink>
-        <NavLink to='/'>
+        <NavLink to='/' className={styles.navLink}>
           <SerringIcon />
           Setting
         </NavLink>

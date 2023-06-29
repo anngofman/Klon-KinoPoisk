@@ -1,4 +1,4 @@
-import logo from '../../assets/icons/pixemaLogo.svg'
+import LogoIcon from '../../assets/icons/LogoIcon'
 import Button from '../../ui/button'
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 const Logo = ({className}:Props) => {
   return (
     <Button className={className}>
-    <img src={logo} alt='logo' />
+    <LogoIcon/>
   </Button>
   )
 }

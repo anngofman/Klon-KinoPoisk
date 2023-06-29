@@ -7,17 +7,17 @@ import Wrapper from '../components/Wrapper'
 
 const Layout = () => {
   return (
-   
-      <div className={styles.layout}>
-         <Wrapper>
+    <div className={styles.layout}>
+      <Wrapper>
         <Header />
         <div className={styles.content}>
-          <SideBar />
-          <Outlet />
+          <SideBar className={styles.sideBar}/>
+          <div className={styles.outlet}>
+            <Outlet />
+          </div>
         </div>
-        </Wrapper>
-      </div>
-
+      </Wrapper>
+    </div>
   )
 }
 
