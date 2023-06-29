@@ -1,5 +1,6 @@
 import styles from './selectUser.module.scss'
 import Select, { OptionValueType } from '../../ui/select'
+
 const OptionValue: OptionValueType[] = [
   {
     text: 'Edit profile'
@@ -14,7 +15,6 @@ const SelectUser = () => {
     <div className={styles.user}>
       <Select inputSelect={false} OptionValue={OptionValue} />
     </div>
-
   )
 }
 

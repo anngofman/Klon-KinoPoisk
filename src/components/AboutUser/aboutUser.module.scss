@@ -23,3 +23,17 @@
     border-radius: 10px;
   }
 }
+
+.signIn {
+  color: $Contextual-Write;
+
+  .icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $System-Primary;
+    border-radius: 10px;
+  }
+}

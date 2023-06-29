@@ -1,21 +1,17 @@
 import styles from './aboutUser.module.scss'
-import Button from '../../ui/button'
 import UserIcon from '../../assets/icons/UserIcon'
 import ArrowRightIcon from '../../assets/icons/ArrowRightIcon'
 import SelectUser from '../SelectUser'
-
-
+import Link from '../../ui/link'
 
 type Props = {
   text: string
 }
 
 const AboutUser = ({ text }: Props) => {
-  const isAuthorized: boolean = true
+  const isAuthorized: boolean = false
   const userName: string[] = text.split(' ')
   return (
-
-
     <>
       {isAuthorized
         ?
@@ -28,20 +24,16 @@ const AboutUser = ({ text }: Props) => {
           </div>
         <SelectUser/>
         </div>
-
         :
-        <Button>
+        <Link to='/signIn' className={styles.signIn}>
           <div className={styles.icon}>
             <UserIcon />
           </div>
-          <p>Sign In</p>
+          Sign In
           <ArrowRightIcon />
-        </Button>
+        </Link>
       }
     </>
-    // <div>
-    //   <Select inputSelect={false} OptionValue={OptionValue}/>
-    // </div>
   )
 }
 
