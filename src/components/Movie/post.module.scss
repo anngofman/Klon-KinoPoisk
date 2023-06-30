@@ -1,0 +1,88 @@
+@import '../../consts/color.scss';
+
+.post {
+  color: $Contextual-Write;
+  display: flex;
+  height: 433px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: min-content;
+
+  .imageBlock {
+    position: relative;
+
+    .imageConnect {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      display: flex;
+      padding: 10px;
+      width: 100%;
+      left: 50%;
+      top: 10%;
+      justify-content: space-between;
+
+      .rating {
+        padding: 2px 8px;
+        gap: 10px;
+        display: flex;
+        border-radius: 6px;
+        background-color: $Tertiary-Green;
+        align-items: center;
+      }
+
+      .fav {
+        padding: 2px 8px;
+        display: flex;
+        border-radius: 6px;
+        background-color: $Background-Graphite;
+        align-items: center;
+
+        svg {
+          path {
+            fill: $System-Primary;
+          }
+        }
+      }
+
+      .trend {
+        padding: 2px 8px;
+        gap: 4px;
+        display: flex;
+        border-radius: 6px;
+        background-color: $System-Primary;
+        align-items: center;
+
+        svg {
+          path {
+            fill: $Contextual-Write;
+          }
+        }
+      }
+    }
+  }
+
+  .textBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    overflow-wrap: anywhere;
+
+    h3 {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+    }
+
+    h6 {
+      color: $Contextual-Light;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+    }
+  }
+}

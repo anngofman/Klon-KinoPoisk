@@ -2,11 +2,11 @@
 
 .layout {
   background-color: $Background-Black;
-  height: 100%;
+  height: max-content;
   width: 100%;
 
   .content {
-    height: 100%;
+    height: max-content;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 40px;
