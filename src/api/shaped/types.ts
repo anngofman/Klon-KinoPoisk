@@ -1,31 +1,31 @@
 export type MyResponseType<T>={
-  total:number
   docs: T
+  page: number
 }
 
-type RatingType = {
+export type RatingType = {
   kp: number
   imdb: number
 }
 
-type PosterType = {
+export type PosterType = {
   url: string
 }
 
-type NameType = {
+export type NameType = {
   name: string
 }
 
-type PremiereType = {
+export type PremiereType = {
   world: string
 }
 
-type PersonType = {
+export type PersonType = {
   name: string
   enProfession: string
 }
 
-type SimilarMovieType = {
+export type SimilarMovieType = {
   id: number
   name: string
   poster: PosterType

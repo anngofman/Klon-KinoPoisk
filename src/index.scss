@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800&display=swap');
-
+@import './consts/color.scss';
 body {
   margin: 0;
   font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +7,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $Background-Black;
+
 
 }
 

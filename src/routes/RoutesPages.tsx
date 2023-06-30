@@ -14,7 +14,9 @@ const RoutesPages = () => {
       <Routes>
         <Route path='/' element={<MainLayout />}>
           <Route index element={<MoviesPage />} />
-          <Route path='posts' element={<MoviesPage />} />
+          <Route path='movies' element={<MoviesPage />} />
+          <Route path='trends' element={<MoviesPage isTrends={true}/>} />
+          <Route path='favorites' element={<MoviesPage />} />
           </Route>
           <Route path='/auth' element={<AuthLayout />} >
             <Route path='signIn' element={<SignInPage />} />

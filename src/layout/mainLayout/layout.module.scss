@@ -2,8 +2,9 @@
 
 .layout {
   background-color: $Background-Black;
-  height: max-content;
+  // height: 100%;
   width: 100%;
+  // max-height: max-content;
 
   .content {
     height: max-content;

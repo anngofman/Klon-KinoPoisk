@@ -19,9 +19,9 @@ const SideBar = ({ className }: Props) => {
           <HomeIcon />
           Home
         </Link>
-        <Link to='/'>
+        <Link to='/trends'>
           <TrendsIcon />
-          Trends
+          Top 10
         </Link>
         <Link to='/' >
           <FavoritesIcon />

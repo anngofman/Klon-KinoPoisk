@@ -1,6 +1,6 @@
 @import '../../consts/color.scss';
 
-.post {
+.movie {
   color: $Contextual-Write;
   display: flex;
   height: 433px;
@@ -11,7 +11,19 @@
 
   .imageBlock {
     position: relative;
+    width: 266px;
+    height: 357px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+img{
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
     .imageConnect {
       position: absolute;
       transform: translate(-50%, -50%);
@@ -84,5 +96,6 @@
       font-weight: 500;
       line-height: 24px;
     }
+  
   }
 }
