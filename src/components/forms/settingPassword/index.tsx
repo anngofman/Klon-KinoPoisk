@@ -15,7 +15,7 @@ const PasswordSettingForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.form}>
-        <div className={styles.input}>
+        <div className={styles.FormStyle}>
           <Input {...register('password')} type='password' placeholder='Password' label='Password' />
           <div className={styles.newPassword}>
             <Input {...register('newPassword')} type='password' placeholder='New password' label='New password' />

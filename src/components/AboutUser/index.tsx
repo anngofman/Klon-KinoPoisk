@@ -22,14 +22,14 @@ const AboutUser = ({ text }: Props) => {
             </div>
             <p>{`${userName[0]}  ${userName[1]}`}</p>
           </div>
-        <SelectUser/>
+          <SelectUser />
         </div>
         :
         <Link to='auth/signIn' className={styles.signIn}>
           <div className={styles.icon}>
             <UserIcon />
           </div>
-          Sign In
+          <h4>Sign In</h4>
           <ArrowRightIcon />
         </Link>
       }

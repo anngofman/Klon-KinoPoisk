@@ -24,4 +24,18 @@
       width: 100%;
     }
   }
+
+  &.light {
+
+    form,
+    label {
+      background-color: $Contextual-Write;
+      color: $Background-Dark;
+
+      input:not(input[type='button']):not(input[type='submit']) {
+        background-color: $Contextual-Write;
+        border: 2px solid $Contextual-Light;
+      }
+    }
+  }
 }

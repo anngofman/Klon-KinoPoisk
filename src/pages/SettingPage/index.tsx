@@ -11,7 +11,7 @@ const SettingPage = () => {
       <h3>Password</h3>
       <PasswordSettingForm />
       <h3>Color mode</h3>
-      <Theme/>
+      <Theme />
     </div>
   )
 }

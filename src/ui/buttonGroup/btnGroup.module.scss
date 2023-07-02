@@ -1,15 +1,21 @@
 @import '../../consts/color.scss';
-.btn{
-  background-color:$Background-Graphite;
+
+.btn {
+  background-color: $Background-Graphite;
   display: flex;
   border-radius: 10px;
-  button{
+
+  button {
     width: 100%;
-    border: 1px solid $Background-Black;
-    svg:hover{
-      & *{
-        stroke:$Contextual-Write;
+
+    svg:hover {
+      & * {
+        stroke: $Contextual-Write;
       }
     }
+  }
+
+  button:not(:last-child) {
+    border-right: 1px solid $Background-Black;
   }
 }

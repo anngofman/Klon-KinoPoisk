@@ -15,7 +15,7 @@ const ProfileForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.form}>
-        <div className={styles.input}>
+        <div className={styles.FormStyle}>
           <Input {...register('name')} type='text' placeholder='Name' label='Name' />
           <Input {...register('email')} type='email' placeholder='Email' label='Email' />
         </div>

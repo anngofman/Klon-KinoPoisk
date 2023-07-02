@@ -29,7 +29,7 @@
     &:before {
       content: '';
       position: absolute;
-      left: 2px;
+      left: 23px;
       bottom: 2px;
       width: 20px;
       height: 20px;
@@ -46,7 +46,7 @@
 
   input {
     &:checked+.slider::before {
-      transform: translateX(23.4px);
+      transform: translateX(-18px);
     }
   }
 }

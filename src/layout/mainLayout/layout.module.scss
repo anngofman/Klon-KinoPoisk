@@ -21,4 +21,29 @@
       grid-area: outlet;
     }
   }
+
+  &.light {
+    background-color: $Contextual-Write;
+
+    h4,
+    h3,
+    td,
+    h5 {
+      color: $Background-Dark;
+    }
+
+    input:not(input[type='button']):not(input[type='submit']) {
+      background-color: $Contextual-Write;
+      border: 2px solid $Contextual-Light;
+    }
+
+    form>div,
+    section {
+      background-color: $Contextual-Write;
+    }
+
+    section {
+      border: 2px solid $Contextual-Light;
+    }
+  }
 }

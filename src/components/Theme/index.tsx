@@ -3,7 +3,7 @@ import styles from './theme.module.scss'
 
 const Theme = () => {
   return (
-    <div className={styles.theme}>
+    <section className={styles.FormStyle}>
       <div className={styles.textBlock}>
         <h5>
           Dark
@@ -13,9 +13,9 @@ const Theme = () => {
         </p>
       </div>
       <div>
-        <Switch/>
+        <Switch />
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -66,7 +66,7 @@ const SingleMovie = ({ children }: Props) => {
           </span>
         </div>
         <div className={styles.description}>
-          {movie?.description}
+          <h4> {movie?.description}</h4>
         </div>
         <TableInfoMovie />
         {children}

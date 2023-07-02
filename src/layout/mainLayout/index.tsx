@@ -3,11 +3,13 @@ import Header from '../../components/Header'
 import SideBar from '../../components/SideBar'
 import { Outlet } from 'react-router-dom'
 import Wrapper from '../../components/Wrapper'
-
+import { useSelector } from 'react-redux'
+import { ThemeSelector } from '../../store/theme/selectors'
 
 const MainLayout = () => {
+  const { theme } = useSelector(ThemeSelector)
   return (
-    <div className={styles.layout}>
+    <div className={`${styles.layout} ${styles[`${theme}`]}`}>
       <Wrapper>
         <Header />
         <div className={styles.content}>
