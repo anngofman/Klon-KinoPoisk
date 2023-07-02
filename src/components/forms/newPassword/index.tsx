@@ -7,8 +7,8 @@ const NewPasswordForm = () => {
   return (
     <form action="" className={styles.form} >
       <h2>New password</h2>
-      <Input type='password' label='Password' names='password'/>
-      <Input type='password' label='Confirm password' names='confirmPassword' />
+      <Input type='password' label='Password' name='password'/>
+      <Input type='password' label='Confirm password' name='confirmPassword' />
       <ButtonPrimarySecondary text='Reset' typeStyle='primary' type='submit' onClick={()=>nav('/auth/signIn')} />
     </form>
   )

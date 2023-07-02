@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form'
 import Input from '../../../ui/input'
 import ButtonPrimarySecondary from '../../../ui/button/buttonPrimaryorSeondary'
-import styles from './profileForm.module.scss'
+import styles from './password.module.scss'
 
-const ProfileForm = () => {
+const PasswordSettingForm = () => {
   const formMethod = useForm()
 
   const { handleSubmit, register } = formMethod
@@ -16,8 +16,11 @@ const ProfileForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.form}>
         <div className={styles.input}>
-          <Input {...register('name')} type='text' placeholder='Name' label='Name' />
-          <Input {...register('email')} type='email' placeholder='Email' label='Email' />
+          <Input {...register('password')} type='password' placeholder='Password' label='Password' />
+          <div className={styles.newPassword}>
+            <Input {...register('newPassword')} type='password' placeholder='New password' label='New password' />
+            <Input {...register('confirmPassword')} type='password' placeholder='Confirm password' label='Confirm password' />
+          </div>
         </div>
       </div>
       <div className={styles.btn}>
@@ -28,4 +31,4 @@ const ProfileForm = () => {
   )
 }
 
-export default ProfileForm
+export default PasswordSettingForm

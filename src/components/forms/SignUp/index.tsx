@@ -11,10 +11,10 @@ const SignInForm = () => {
   return (
     <form action="" className={styles.form} >
       <h2>Sign Up</h2>
-      <Input type='text' label='Name' names='name'/>
-      <Input type='email' label='Email' names='email'/>
-      <Input type='password' label='Password' names='password'/>
-      <Input type='password' label='Confirm password' names='passwordConform'/>
+      <Input type='text' label='Name' name='name'/>
+      <Input type='email' label='Email' name='email'/>
+      <Input type='password' label='Password' name='password'/>
+      <Input type='password' label='Confirm password' name='passwordConform'/>
     
       <ButtonPrimarySecondary text='Sign Un' typeStyle='primary' type='submit' />
       <div className={styles.signUp}>

@@ -25,7 +25,7 @@ const Select = ({ label, OptionValue, inputSelect }: Props) => {
   return (
     <div className={`${styles.select} ${!inputSelect ? `` : `${styles.inputBlock}` }`}>
       <div className={!inputSelect ? `` : `${styles.inputBlock}`}>
-        <Input type='text' label={label} className={!inputSelect ? `${styles.inputNone}` : ``} />
+        <Input name='select' type='text' label={label} className={!inputSelect ? `${styles.inputNone}` : ``} />
         <Button onClick={handleOnClick} className={styles.btn}>
           <ArrowDownIcon />
         </Button>

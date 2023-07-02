@@ -27,7 +27,7 @@ const SideBar = ({ className }: Props) => {
           <FavoritesIcon />
           Favorites
         </Link>
-        <Link to='/' >
+        <Link to='/setting' >
           <SerringIcon />
           Setting
         </Link>

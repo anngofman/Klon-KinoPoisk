@@ -1,35 +1,37 @@
-import styles from './input.module.scss'
 import { useFormContext } from 'react-hook-form'
+import styles from './input.module.scss'
+import {DetailedHTMLProps, InputHTMLAttributes, forwardRef} from 'react'
 
 
-type Props = {
+interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   label?: string
-  type: string
-  names: string
-  placeholder?: string
-  value?: string
-  hidden?: boolean
-  onChange?: () => void
+  // type: string
+  // name: string
+  // placeholder?: string
+  // value?: string
+  // hidden?: boolean
+  // onChange?: () => void
   className?: string
   }
 
-const Input = ({ label, type, names, placeholder, value, hidden, onChange, className }: Props) => {
-  const { register } = useFormContext()
+const Input = forwardRef<HTMLInputElement, Props>(({ label, type, name, placeholder, value, hidden, onChange, className,   ...restProps }: Props,ref) => {
 
   return (
     <label className={styles.input}>
       <p>{label}</p>
       <input
-        {...register(names)}
         type={type}
         placeholder={placeholder}
+        name={name}
         value={value}
         hidden={hidden}
         className={className}
         onChange={onChange}
+        ref={ref}
+        {...restProps}
       />
     </label>
   )
-}
+})
 
 export default Input

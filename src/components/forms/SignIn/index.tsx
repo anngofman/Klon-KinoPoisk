@@ -8,8 +8,8 @@ const SignInForm = () => {
   return (
     <form action="" className={styles.form} >
       <h2>Sign In</h2>
-      <Input type='email' label='Email' names='email'/>
-      <Input type='password' label='Password' names='password'/>
+      <Input type='email' label='Email' name='email'/>
+      <Input type='password' label='Password' name='password'/>
       <Link to='/auth/resetPassword'>
         <p>Forgot password?</p>
       </Link>

@@ -1,0 +1,18 @@
+@import '../../consts/color.scss';
+.theme {
+  display: flex;
+  justify-content: space-between;
+  background-color: $Background-Dark;
+  border-radius: 10px;
+  padding: 24px 40px;
+  align-items: center;
+
+  .textBlock {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    p{
+      color:$Contextual-Light;
+    }
+  }
+}
