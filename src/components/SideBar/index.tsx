@@ -15,13 +15,13 @@ const SideBar = ({ className }: Props) => {
   return (
     <div className={`${styles.sideBar} ${className}`}>
       <nav>
-        <Link to='/'  >
+        <Link to='/movies'  >
           <HomeIcon />
           Home
         </Link>
         <Link to='/trends'>
           <TrendsIcon />
-          Top 10
+          Trends
         </Link>
         <Link to='/' >
           <FavoritesIcon />

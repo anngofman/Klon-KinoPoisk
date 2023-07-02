@@ -6,12 +6,14 @@ import { useEffect } from 'react'
 import { loadMovies, loadTrendMovies, setDefaultPage, setIncPage } from '../../store/movies/actions'
 import Movie from '../../components/Movie'
 import ButtonPrimarySecondary from '../../ui/button/buttonPrimaryorSeondary'
+import { useLocation } from 'react-router-dom'
 
 type Props = {
   isTrends?: boolean
 }
 
 const MoviesPage = ({ isTrends }: Props) => {
+  const location = useLocation();
   const dispatch = useDispatch<AppDispatch>()
   const page = useSelector((state: AppState) => state.movies.page)
   let moviesAll = useSelector((state: AppState) => state.movies)
@@ -20,15 +22,19 @@ const MoviesPage = ({ isTrends }: Props) => {
     ? movies = moviesAll.trend : movies = moviesAll.docs
 
   useEffect(() => {
+    
     let limit = 10
     isTrends
       ? dispatch(loadTrendMovies(limit, page))
       : dispatch(loadMovies(limit, page))
 
+  }, [page, dispatch, isTrends])
+
+  useEffect(() => {
     return () => {
       dispatch(setDefaultPage())
     }
-  }, [page, dispatch, isTrends])
+  }, [dispatch, location])
 
   const loadMorePosts = () => {
     dispatch(setIncPage())
@@ -53,8 +59,8 @@ const MoviesPage = ({ isTrends }: Props) => {
           isTrends={isTrends!}
         />)
       })}
-      {!isTrends && <ButtonPrimarySecondary text='Add movies' type='button' typeStyle='primary' onClick={loadMorePosts}></ButtonPrimarySecondary>}
-
+      {/* {!isTrends && <ButtonPrimarySecondary text='Add movies' type='button' typeStyle='primary' onClick={loadMorePosts}></ButtonPrimarySecondary>} */}
+      <ButtonPrimarySecondary text='Add movies' type='button' typeStyle='primary' onClick={loadMorePosts}></ButtonPrimarySecondary>
     </div>
   )
 }

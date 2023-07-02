@@ -18,7 +18,8 @@ export const setTrendMovies = (movies: TypeMovies[]) => {
 
 export const loadTrendMovies = (limit: number, page: number): AppThunk => {
 	return async (dispatch) => {
-		const movies = (await getTrendMovies(limit, page)).data.docs
+		const movies: TypeMovies[] = (await getTrendMovies(limit, page)).data.docs
+
 		dispatch(setTrendMovies(movies))
 	}
 }
@@ -26,6 +27,7 @@ export const loadTrendMovies = (limit: number, page: number): AppThunk => {
 export const loadMovies = (limit: number, page: number): AppThunk => {
 	return async (dispatch) => {
 		const movies = (await getMovies(limit, page)).data.docs
+		console.log(movies)
 		dispatch(setMovies(movies))
 	}
 }

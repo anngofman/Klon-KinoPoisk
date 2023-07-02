@@ -1,0 +1,29 @@
+.slider {
+  /* Добавьте стили для контейнера слайдера */
+  display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    transition: transform 0.3s ease-in-out;
+
+    .navigate{
+      display: flex;
+      justify-content: space-between;
+      h4{
+        font-size: 24px;
+      }
+      .btn button{
+        margin-left: 20px;
+      }
+    }
+
+}
+
+.sliderItems {
+  display: flex;
+  gap: 40px;
+  /* Добавьте стили для обертки слайдов */
+}
+
+.sliderItem {
+  flex: 0 0 266px; /* Установите ширину слайда, например, 300px */
+}

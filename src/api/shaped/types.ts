@@ -1,4 +1,4 @@
-export type MyResponseType<T>={
+export type MyResponseType<T> = {
   docs: T
   page: number
 }
@@ -31,6 +31,11 @@ export type SimilarMovieType = {
   poster: PosterType
 }
 
+export type BudgetType = {
+    value: number,
+    currency: string
+}
+
 export type TypeSingleMovie = {
   id: number
   name: string
@@ -41,7 +46,7 @@ export type TypeSingleMovie = {
   rating: RatingType
   year: number
   premiere: PremiereType
-  boxOffice: {}
+  budget: BudgetType
   countries: NameType[]
   persons: PersonType[]
   similarMovies: SimilarMovieType[]
@@ -53,4 +58,4 @@ export type TypeSingleMovie = {
 // director: []
 // writers: []
 
-export type TypeMovies = Pick <TypeSingleMovie, 'id' | 'name' | 'genres'  | 'poster' | 'rating' | 'favorites'>
+export type TypeMovies = Pick<TypeSingleMovie, 'id' | 'name' | 'genres' | 'poster' | 'rating' | 'favorites'>

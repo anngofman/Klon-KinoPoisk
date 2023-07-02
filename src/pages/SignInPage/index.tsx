@@ -1,4 +1,4 @@
-import SignInForm from '../../components/forms/SignInForm'
+import SignInForm from '../../components/forms/SignIn'
 import styles from './signIn.module.scss'
 
 const SignInPage = () => {

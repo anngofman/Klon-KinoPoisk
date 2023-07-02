@@ -20,7 +20,7 @@ const SearchInput = ({className}:Props) => {
   }
   return (
     <div className={`${styles.searchInput} ${className}`}>
-      <Input className={styles.input} type='text' placeholder='Search...' onChange={handleSearchValue} />
+      <Input className={styles.input} type='text' placeholder='Search...' onChange={handleSearchValue} names='search'/>
       <Button className={styles.icon} onClick={handleOnClickFilter}>
         {filter ? <FilterOpen /> : <FilterClose />}
       </Button>

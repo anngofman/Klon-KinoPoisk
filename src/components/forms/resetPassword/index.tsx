@@ -7,7 +7,7 @@ const nav = useNavigate()
   return (
     <form action="" className={styles.form} >
       <h2>Reset password</h2>
-      <Input type='email' label='Email' />
+      <Input type='email' label='Email' names='email'/>
       <ButtonPrimarySecondary text='Reset' typeStyle='primary' type='submit' onClick={()=> nav('/auth/newPassword')} />
     </form>
   )

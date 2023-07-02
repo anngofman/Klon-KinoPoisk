@@ -1,5 +1,5 @@
 import styles from './signUn.module.scss'
-import SignUpForm from '../../components/forms/SignUpForm'
+import SignUpForm from '../../components/forms/SignUp'
 
 const SignUpPage = () => {
   return (

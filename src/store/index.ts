@@ -1,9 +1,11 @@
 import { configureStore, combineReducers, Action } from "@reduxjs/toolkit"
 import thunkMiddleware, { ThunkAction } from 'redux-thunk'
 import { MovieReducer } from "./movies/reducer"
+import { SingleMovieReducer } from "./singleMovie/reducer"
 
 const rootReducer = combineReducers({
-movies: MovieReducer
+movies: MovieReducer,
+singleMovie: SingleMovieReducer
 })
 
 export const store = configureStore({

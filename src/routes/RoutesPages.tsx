@@ -6,6 +6,7 @@ import SignUpPage from '../pages/SignUp';
 import ResetPasswordPage from '../pages/ResetPasswordPage';
 import NewPasswordPage from '../pages/NewPassword';
 import MoviesPage from '../pages/MoviesPage';
+import SingleMoviePage from '../pages/SingleMoviePage';
 
 
 const RoutesPages = () => {
@@ -15,6 +16,7 @@ const RoutesPages = () => {
         <Route path='/' element={<MainLayout />}>
           <Route index element={<MoviesPage />} />
           <Route path='movies' element={<MoviesPage />} />
+          <Route path='movie/:movieId' element={<SingleMoviePage />} />
           <Route path='trends' element={<MoviesPage isTrends={true}/>} />
           <Route path='favorites' element={<MoviesPage />} />
           </Route>
