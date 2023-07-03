@@ -3,11 +3,13 @@ import thunkMiddleware, { ThunkAction } from 'redux-thunk'
 import { MovieReducer } from "./movies/reducer"
 import { SingleMovieReducer } from "./singleMovie/reducer"
 import { ThemeReducer } from "./theme/reducer"
+import LoaderReducer from "./loader/reducer"
 
 const rootReducer = combineReducers({
   movies: MovieReducer,
   singleMovie: SingleMovieReducer,
-  theme: ThemeReducer
+  theme: ThemeReducer,
+  loader: LoaderReducer
 })
 
 export const store = configureStore({

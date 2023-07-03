@@ -5,13 +5,18 @@ import FavoritesIcon from '../../assets/icons/FavoritesIcon'
 import SerringIcon from '../../assets/icons/SerringIcon'
 import Link from '../../ui/link'
 import CopyRight from '../CopyRight'
+// import { useDispatch } from 'react-redux'
+// import { setDefaultPage } from '../../store/movies/actions'
 
 type Props = {
   className: string
 }
 
 const SideBar = ({ className }: Props) => {
-
+  // const dispatch = useDispatch()
+// const handle = () =>{
+//   dispatch(setDefaultPage())
+// }
   return (
     <div className={`${styles.sideBar} ${className}`}>
       <nav>
@@ -19,11 +24,12 @@ const SideBar = ({ className }: Props) => {
           <HomeIcon />
           Home
         </Link>
-        <Link to='/trends'>
+        <Link to='/trends' >
           <TrendsIcon />
+          
           Trends
         </Link>
-        <Link to='/' >
+        <Link to='/favorites' >
           <FavoritesIcon />
           Favorites
         </Link>

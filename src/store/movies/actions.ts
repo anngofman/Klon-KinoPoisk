@@ -1,6 +1,7 @@
 import { AppThunk } from ".."
 import { getMovies, getTrendMovies } from "../../api/getMovies"
 import { TypeMovies } from "../../api/shaped/types"
+import { startLoading, stopLoading } from "../loader/actions"
 
 export const setMovies = (movies: TypeMovies[]) => {
 	return {
@@ -19,16 +20,19 @@ export const setTrendMovies = (movies: TypeMovies[]) => {
 export const loadTrendMovies = (limit: number, page: number): AppThunk => {
 	return async (dispatch) => {
 		const movies: TypeMovies[] = (await getTrendMovies(limit, page)).data.docs
-
 		dispatch(setTrendMovies(movies))
 	}
 }
 
 export const loadMovies = (limit: number, page: number): AppThunk => {
+	
 	return async (dispatch) => {
+		//dis загрузка
+		dispatch(startLoading())
 		const movies = (await getMovies(limit, page)).data.docs
-		console.log(movies)
 		dispatch(setMovies(movies))
+		dispatch(stopLoading())
+		//dis откл
 	}
 }
 
@@ -48,5 +52,11 @@ export const setIncPage = () => {
 export const setDefaultPage = () => {
 	return {
 		type: 'DEFAULT_PAGE'
+	}
+}
+
+export const setInitialState = () => {
+	return {
+		type: 'INITIAL_STATE'
 	}
 }

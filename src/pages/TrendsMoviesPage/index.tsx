@@ -1,21 +1,21 @@
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
 import { AppDispatch, AppState } from '../../store'
-import { useEffect, useState } from 'react'
-import { loadMovies, setDefaultPage, setInitialState } from '../../store/movies/actions'
+import { loadTrendMovies, setDefaultPage, setInitialState } from '../../store/movies/actions'
+import { useSelector } from 'react-redux'
 import Movies from '../../components/Movies'
 import Loader from '../../components/Loader'
 import { isLoadingSelector } from '../../store/loader/selectors'
-import styles from './moviesPage.module.scss'
+import styles from './trendPage.module.scss'
 
-const MoviesPage = () => {
+const TrendsMoviesPage = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const movies = useSelector((state: AppState) => state.movies.docs);
-  const load = useSelector(isLoadingSelector)
   const [page, setPage] = useState(1)
+  const load = useSelector(isLoadingSelector)
   const loadMorePosts = () => {
     setPage((prevState) => prevState + 1)
   }
+  const trendsMovies = useSelector((state: AppState) => state.movies.trend);
 
   useEffect(() => {
     dispatch(setDefaultPage());
@@ -26,14 +26,14 @@ const MoviesPage = () => {
 
   useEffect(() => {
     let limit = 10;
-    dispatch(loadMovies(limit, page));
+    dispatch(loadTrendMovies(limit, page));
   }, [page, dispatch]);
 
   return (<div className={styles.moviesPage}>
-    <Movies movies={movies} />
+    <Movies movies={trendsMovies} isTrends />
     <Loader isLoading={load} onClick={loadMorePosts} />
   </div>
   );
 }
 
-export default MoviesPage
+export default TrendsMoviesPage;

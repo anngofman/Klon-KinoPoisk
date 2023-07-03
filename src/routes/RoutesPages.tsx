@@ -9,6 +9,7 @@ import MoviesPage from '../pages/MoviesPage';
 import SingleMoviePage from '../pages/SingleMoviePage';
 import SettingPage from '../pages/SettingPage';
 import NotFoundPage from '../pages/NotFoundPage';
+import TrendsMoviesPage from '../pages/TrendsMoviesPage';
 
 const RoutesPages = () => {
   return (
@@ -18,7 +19,7 @@ const RoutesPages = () => {
           <Route index element={<MoviesPage />} />
           <Route path='movies' element={<MoviesPage />} />
           <Route path='movie/:movieId' element={<SingleMoviePage />} />
-          <Route path='trends' element={<MoviesPage isTrends={true} />} />
+          <Route path='trends' element={<TrendsMoviesPage />} />
           <Route path='favorites' element={<MoviesPage />} />
           <Route path='setting' element={<SettingPage />} />
         </Route>

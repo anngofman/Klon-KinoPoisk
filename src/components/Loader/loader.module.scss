@@ -1,0 +1,45 @@
+@import '../../consts/color.scss';
+
+.button {
+  position: relative;
+  cursor: pointer;
+  width: auto;
+  display: flex;
+  padding: 8px 24px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 40px;
+  margin: 0 auto;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 4px solid $System-Primary;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: loader-rotate 0.8s linear infinite;
+}
+
+.btnMoreMovie {
+  background-color: rgb(50, 53, 55);
+  color: rgb(255, 255, 255);
+  border-radius: 40px;
+  height: 56px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+@keyframes loader-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

@@ -6,11 +6,12 @@ type Props = {
   children?: ReactNode
   to: string
   className?: string
+  onClick?: ()=>void
 }
 
-const Link = ({ children, to, className }: Props) => {
+const Link = ({ children, to, className, onClick }: Props) => {
   return (
-    <NavLink to={to} className={`${styles.navLink} ${className}`}>
+    <NavLink to={to} className={`${styles.navLink} ${className}`} onClick={onClick}>
       {children}
     </NavLink>
   )

@@ -1,10 +1,8 @@
 import { TypeMovies } from "../../api/shaped/types"
 
-
 export type MoviesStateType = {
 	docs: TypeMovies[]
-	page: number
-	trend:TypeMovies[]
+	trend: TypeMovies[]
 }
 
 export type MoviesActionType = {
