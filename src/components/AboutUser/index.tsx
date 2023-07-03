@@ -3,24 +3,25 @@ import UserIcon from '../../assets/icons/UserIcon'
 import ArrowRightIcon from '../../assets/icons/ArrowRightIcon'
 import SelectUser from '../SelectUser'
 import Link from '../../ui/link'
+import { useAuth } from '../../hooks/useAuth'
 
-type Props = {
-  text: string
-}
 
-const AboutUser = ({ text }: Props) => {
-  const isAuthorized: boolean = false
-  const userName: string[] = text.split(' ')
+
+const AboutUser = () => {
+  const {isAuth, email} = useAuth()
+const userName = email.split('@')[0];
+const firstTwoLetters = userName.substring(0, 2).toUpperCase();
+
   return (
     <>
-      {isAuthorized
+      {isAuth
         ?
         <div className={`${styles.wrapper}`}>
           <div className={styles.about}>
             <div className={styles.authorized_icon}>
-              <p>{`${userName[0][0].toLocaleUpperCase()}  ${userName[1][0].toLocaleUpperCase()}`}</p>
+              <p>{`${firstTwoLetters}`}</p>
             </div>
-            <p>{`${userName[0]}  ${userName[1]}`}</p>
+            <p>{`${userName}`}</p>
           </div>
           <SelectUser />
         </div>

@@ -7,6 +7,7 @@ import { useState } from 'react'
 
 export type OptionValueType = {
   text: string
+  to: string
 }
 
 type Props = {
@@ -33,7 +34,7 @@ const Select = ({ label, OptionValue, inputSelect }: Props) => {
       <div className={`${styles.links}
       ${styles[`${option ? 'linksActive' : ''}`]} `}>
         {OptionValue.map((option, index) => {
-          return (<Link to='' key={index} className={styles.link}>
+          return (<Link to={option.to} key={index} className={styles.link}>
             <p>{option.text}</p>
           </Link>)
         })}

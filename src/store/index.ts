@@ -4,12 +4,14 @@ import { MovieReducer } from "./movies/reducer"
 import { SingleMovieReducer } from "./singleMovie/reducer"
 import { ThemeReducer } from "./theme/reducer"
 import LoaderReducer from "./loader/reducer"
+import authReducer from "./auth/reducer"
 
 const rootReducer = combineReducers({
   movies: MovieReducer,
   singleMovie: SingleMovieReducer,
   theme: ThemeReducer,
-  loader: LoaderReducer
+  loader: LoaderReducer,
+  auth: authReducer
 })
 
 export const store = configureStore({

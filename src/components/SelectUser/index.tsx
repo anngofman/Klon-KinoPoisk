@@ -3,10 +3,12 @@ import Select, { OptionValueType } from '../../ui/select'
 
 const OptionValue: OptionValueType[] = [
   {
-    text: 'Edit profile'
+    text: 'Edit profile',
+    to:'/setting'
   },
   {
-    text: 'Log out'
+    text: 'Log out',
+    to:'auth/logout'
   }
 ]
 

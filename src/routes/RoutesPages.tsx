@@ -10,6 +10,7 @@ import SingleMoviePage from '../pages/SingleMoviePage';
 import SettingPage from '../pages/SettingPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import TrendsMoviesPage from '../pages/TrendsMoviesPage';
+import LogoutPage from '../pages/LogoutPage';
 
 const RoutesPages = () => {
   return (
@@ -22,8 +23,13 @@ const RoutesPages = () => {
           <Route path='trends' element={<TrendsMoviesPage />} />
           <Route path='favorites' element={<MoviesPage />} />
           <Route path='setting' element={<SettingPage />} />
+
+
+
+
         </Route>
         <Route path='/auth' element={<AuthLayout />} >
+          <Route path='logout' element={<LogoutPage />} />
           <Route path='signIn' element={<SignInPage />} />
           <Route path='signUp' element={<SignUpPage />} />
           <Route path='resetPassword' element={<ResetPasswordPage />} />
