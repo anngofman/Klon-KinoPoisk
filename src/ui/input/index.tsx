@@ -1,16 +1,9 @@
-import { useFormContext } from 'react-hook-form'
 import styles from './input.module.scss'
 import {DetailedHTMLProps, InputHTMLAttributes, forwardRef} from 'react'
 
 
 interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   label?: string
-  // type: string
-  // name: string
-  // placeholder?: string
-  // value?: string
-  // hidden?: boolean
-  // onChange?: () => void
   className?: string
   }
 

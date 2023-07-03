@@ -1,25 +1,24 @@
-import { NameType, PosterType, RatingType } from '../../api/shaped/types'
 import FavoritesIcon from '../../assets/icons/FavoritesIcon'
 import TrendsIcon from '../../assets/icons/TrendsIcon'
 import Link from '../../ui/link'
-import styles from './movie.module.scss'
+import styles from './searchMovie.module.scss'
 
 type Props = {
   id: number
   name: string
-  poster: PosterType
-  genres?: NameType[]
-  rating?: RatingType
+  poster: string
+  genres?: string[]
+  rating?: number
   favorites?: boolean
   isTrends?: boolean
 }
 
-const Movie = ({ id, name, genres, poster, rating, favorites, isTrends }: Props) => {
+const SearchMovie = ({ id, name, genres, poster, rating, favorites, isTrends }: Props) => {
   let ratingKp = ''
-  if (rating && rating.kp < 5) {
+  if (rating && rating < 5) {
     ratingKp = 'orange'
   }
-  else if (rating && (rating.kp > 5 && rating.kp < 7)) {
+  else if (rating && (rating > 5 && rating < 7)) {
     ratingKp = 'yellow'
   } else { ratingKp = 'green' }
 
@@ -28,16 +27,16 @@ const Movie = ({ id, name, genres, poster, rating, favorites, isTrends }: Props)
     <Link to={`/movie/${id}`} className={styles.movie}>
       <div className={styles.imageBlock}>
 
-        <img src={poster.url} alt='movie' />
+        <img src={poster} alt='movie' />
         {rating ?
           <div className={styles.imageConnect}>
 
             {isTrends
               ? <span className={styles.trend}>
-                <TrendsIcon />{rating?.kp}
+                <TrendsIcon />{rating}
               </span>
               : <span className={`${styles.rating}
-              ${styles[ratingKp]}`}>{rating?.kp}</span>
+              ${styles[ratingKp]}`}>{rating}</span>
             }
             <span className={styles.fav}>
               <FavoritesIcon />
@@ -54,7 +53,7 @@ const Movie = ({ id, name, genres, poster, rating, favorites, isTrends }: Props)
             if (index > 2) {
               return null
             }
-            return val.name
+            return val
           }).join('•')}
         </h6>
       </div>
@@ -63,4 +62,4 @@ const Movie = ({ id, name, genres, poster, rating, favorites, isTrends }: Props)
   )
 }
 
-export default Movie
+export default SearchMovie

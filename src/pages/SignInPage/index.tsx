@@ -16,6 +16,7 @@ const SignInPage = () => {
         dispatch(loginSuccessAction({
           email: user.email as string,
           id: user.uid,
+          token: user.refreshToken
         }));
         navigate('/', { replace: true })
       })

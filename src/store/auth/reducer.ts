@@ -3,7 +3,7 @@ import { LoginActionType, LoginStateType } from "./types";
 
 const initialState: LoginStateType = {
   email: '',
-  // accessToken: '',
+  token: '',
   id: ''
 };
 
@@ -14,7 +14,7 @@ const authReducer = (state: LoginStateType = initialState, action: LoginActionTy
         ...state,
         email: action.payload.email,
         id: action.payload.id,
-        // accessToken: action.payload.accessToken
+        token: action.payload.token
       };
     case LOGOUT:
       return initialState;

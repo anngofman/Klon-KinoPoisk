@@ -39,11 +39,11 @@ export type BudgetType = {
 export type TypeSingleMovie = {
   id: number
   name: string
-  poster: PosterType
+  poster: PosterType 
   genres: NameType[]
   movieLength: number
   description: string
-  rating: RatingType
+  rating: RatingType 
   year: number
   premiere: PremiereType
   budget: BudgetType

@@ -1,4 +1,5 @@
-import {LoginActionType, LogoutActionType, UserType } from "./types";
+import {LoginActionType, LogoutActionType, UserType } from "./types"
+
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGOUT = 'LOGOUT';
 

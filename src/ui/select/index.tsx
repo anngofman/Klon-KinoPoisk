@@ -19,7 +19,6 @@ type Props = {
 const Select = ({ label, OptionValue, inputSelect }: Props) => {
   const [option, setOption] = useState(false)
   const handleOnClick = () => {
-    console.log(option)
     setOption(!option)
   }
 
