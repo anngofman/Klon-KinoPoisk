@@ -26,13 +26,9 @@ const RoutesPages = () => {
           <Route path='favorites' element={<FavoritesPage />} />
           <Route path='setting' element={<SettingPage />} />
           <Route path='search' element={<SearchPage />} />
-
-
-          
-
         </Route>
         <Route path='/auth' element={<AuthLayout />} >
-        <Route path='logout' element={<LogoutPage />} />
+          <Route path='logout' element={<LogoutPage />} />
           <Route path='signIn' element={<SignInPage />} />
           <Route path='signUp' element={<SignUpPage />} />
           <Route path='resetPassword' element={<ResetPasswordPage />} />

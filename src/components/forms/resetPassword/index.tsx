@@ -1,15 +1,30 @@
 import styles from './resetPasswordForm.module.scss'
 import Input from '../../../ui/input'
 import ButtonPrimarySecondary from '../../../ui/button/buttonPrimaryorSeondary'
-import { useNavigate } from 'react-router-dom'
-const ResetPasswordForm = () => {
-const nav = useNavigate()
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { AppState } from '../../../store'
+
+type Props = {
+  onClick: (email: string) => void
+}
+
+const ResetPasswordForm = ({ onClick }: Props) => {
+  const isSuccess = useSelector((state: AppState) => state.resetPass.isSuccess)
+
+  const [email, setEmail] = useState('')
   return (
-    <form action="" className={styles.form} >
-      <h2>Reset password</h2>
-      <Input type='email' label='Email' name='email' placeholder='Email'/>
-      <ButtonPrimarySecondary text='Reset' typeStyle='primary' type='submit' onClick={()=> nav('/auth/newPassword')} />
-    </form>
+    <div className={styles.form}>
+      <div><h2>Reset password </h2>
+        {isSuccess
+          ? <div className={styles.confirmReset}>
+            You will receive an email with a link to reset your password!
+          </div>
+          : ''}
+      </div>
+      <Input type='email' label='Email' name='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+      <ButtonPrimarySecondary text='Reset' typeStyle='primary' type='submit' onClick={() => onClick(email)} disabled={isSuccess} />
+    </div>
   )
 }
 

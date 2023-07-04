@@ -24,6 +24,7 @@ const ButtonPrimarySecondary = (props: Props) => {
               type={props.type}
               value={props.text}
               onClick={props.onClick}
+              disabled={props.disabled}
           />
       </>
   )

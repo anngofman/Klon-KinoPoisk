@@ -1,3 +1,4 @@
+import { ResetPassReducer } from './resetPassEmail/reducer';
 import { configureStore, combineReducers, Action } from "@reduxjs/toolkit"
 import thunkMiddleware, { ThunkAction } from 'redux-thunk'
 import { MovieReducer } from "./movies/reducer"
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   theme: ThemeReducer,
   loader: LoaderReducer,
   auth: authReducer,
-  search: SearchReducer
+  search: SearchReducer,
+  resetPass: ResetPassReducer
 })
 
 export const store = configureStore({
