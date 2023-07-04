@@ -3,13 +3,13 @@ import { useDispatch } from 'react-redux';
 import ResetPasswordForm from '../../components/forms/resetPassword'
 import styles from './reset.module.scss'
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-import { passwordResetRequest, passwordResetSuccess } from '../../store/resetPassEmail/actions';
+import { passwordForgotRequest, passwordForgotSuccess } from '../../store/forgotPass/actions';
 
 
 const ResetPasswordPage = () => {
   const dispatch = useDispatch();
   const handleResetPass = (email: string) => {
-    dispatch(passwordResetRequest());
+    dispatch(passwordForgotRequest());
 
     const actionCodeSettings = {
       url: "http://localhost:3000/auth/signIn", // Укажите новый URL перенаправления
@@ -18,7 +18,7 @@ const ResetPasswordPage = () => {
     const auth = getAuth();
     sendPasswordResetEmail(auth, email, actionCodeSettings)
       .then((res) => {
-        dispatch(passwordResetSuccess());
+        dispatch(passwordForgotSuccess());
       })
       .catch(console.error)
   }
@@ -26,7 +26,7 @@ const ResetPasswordPage = () => {
   return (
 
     <div className={styles.reset}>
-      
+
       <ResetPasswordForm onClick={handleResetPass} />
 
     </div>

@@ -11,6 +11,8 @@ type Props = {
 
 const ResetPasswordForm = ({ onClick }: Props) => {
   const isSuccess = useSelector((state: AppState) => state.resetPass.isSuccess)
+  const isLoading = useSelector((state: AppState) => state.resetPass.isLoading)
+
 
   const [email, setEmail] = useState('')
   return (
@@ -23,7 +25,7 @@ const ResetPasswordForm = ({ onClick }: Props) => {
           : ''}
       </div>
       <Input type='email' label='Email' name='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
-      <ButtonPrimarySecondary text='Reset' typeStyle='primary' type='submit' onClick={() => onClick(email)} disabled={isSuccess} />
+      <ButtonPrimarySecondary text='Reset' typeStyle='primary' type='submit' onClick={() => onClick(email)} disabled={isLoading} />
     </div>
   )
 }

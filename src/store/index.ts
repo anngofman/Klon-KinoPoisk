@@ -1,4 +1,4 @@
-import { ResetPassReducer } from './resetPassEmail/reducer';
+import { ResetPassReducer } from './forgotPass/reducer';
 import { configureStore, combineReducers, Action } from "@reduxjs/toolkit"
 import thunkMiddleware, { ThunkAction } from 'redux-thunk'
 import { MovieReducer } from "./movies/reducer"
