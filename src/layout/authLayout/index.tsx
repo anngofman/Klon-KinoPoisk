@@ -22,8 +22,6 @@ const AuthLayout = () => {
         </Wrapper>
       </div>
     </>
-
-
   )
 }
 

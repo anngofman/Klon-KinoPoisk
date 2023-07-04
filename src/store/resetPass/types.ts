@@ -1,10 +1,10 @@
-export type ForgotPassStateType={
+export type ResetPassStateType={
   isLoading: boolean
   error: string | null 
   isSuccess: boolean
 }
 
-export type ForgotPassActionType = {
+export type ResetPassActionType = {
   type: string
   payload?: string
 }

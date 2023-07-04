@@ -5,13 +5,12 @@ import styles from './profileForm.module.scss'
 
 const ProfileForm = () => {
   const formMethod = useForm()
-
   const { handleSubmit, register } = formMethod
 
   const onSubmit = (data: any) => {
     console.log(data);
-
   }
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.form}>

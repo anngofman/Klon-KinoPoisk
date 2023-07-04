@@ -1,17 +1,23 @@
 import styles from './resetPasswordForm.module.scss'
 import Input from '../../../ui/input'
 import ButtonPrimarySecondary from '../../../ui/button/buttonPrimaryorSeondary'
-import { useNavigate } from 'react-router-dom'
+import {useState} from 'react'
 
-const NewPasswordForm = () => {
-  const nav = useNavigate()
+type Props = {
+  onClick: (newPass:string)=>void
+}
+
+const NewPasswordForm = ({onClick}:Props) => {
+
+  const [newPass, setNewPass] = useState('')
+
   return (
-    <form action="" className={styles.form} >
+    <section  className={styles.form} >
       <h2>New password</h2>
-      <Input type='password' label='Password' name='password' placeholder='Password'/>
+      <Input type='password' label='Password' name='password' placeholder='New password' value={newPass} onChange={(e)=>setNewPass(e.target.value)}/>
       <Input type='password' label='Confirm password' name='confirmPassword' placeholder='Confirm password'/>
-      <ButtonPrimarySecondary text='Reset' typeStyle='primary' type='submit' onClick={()=>nav('/auth/signIn')} />
-    </form>
+      <ButtonPrimarySecondary text='Reset' typeStyle='primary' type='submit' onClick={()=>onClick(newPass)} />
+    </section>
   )
 }
 

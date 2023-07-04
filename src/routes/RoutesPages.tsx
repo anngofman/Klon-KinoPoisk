@@ -3,7 +3,6 @@ import MainLayout from '../layout/mainLayout';
 import AuthLayout from '../layout/authLayout';
 import SignInPage from '../pages/SignInPage';
 import SignUpPage from '../pages/SignUp';
-import ResetPasswordPage from '../pages/ResetPasswordPage';
 import NewPasswordPage from '../pages/NewPassword';
 import MoviesPage from '../pages/MoviesPage';
 import SingleMoviePage from '../pages/SingleMoviePage';
@@ -13,6 +12,7 @@ import TrendsMoviesPage from '../pages/TrendsMoviesPage';
 import LogoutPage from '../pages/LogoutPage';
 import FavoritesPage from '../pages/FavoritasMovies';
 import SearchPage from '../pages/SearchPage';
+import ForgotPasswordPage from '../pages/ResetPasswordPage';
 
 const RoutesPages = () => {
   return (
@@ -31,7 +31,7 @@ const RoutesPages = () => {
           <Route path='logout' element={<LogoutPage />} />
           <Route path='signIn' element={<SignInPage />} />
           <Route path='signUp' element={<SignUpPage />} />
-          <Route path='resetPassword' element={<ResetPasswordPage />} />
+          <Route path='resetPassword' element={<ForgotPasswordPage />} />
           <Route path='newPassword' element={<NewPasswordPage />} />
         </Route>
         <Route path='*' element={<NotFoundPage />} />

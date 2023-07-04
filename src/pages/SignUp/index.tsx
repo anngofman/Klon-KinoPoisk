@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 const SignUpPage = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  
+
   const handleRegister = (email: string, password: string) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)

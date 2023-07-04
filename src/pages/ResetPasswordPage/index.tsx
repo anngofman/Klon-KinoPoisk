@@ -6,8 +6,9 @@ import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { passwordForgotRequest, passwordForgotSuccess } from '../../store/forgotPass/actions';
 
 
-const ResetPasswordPage = () => {
+const ForgotPasswordPage = () => {
   const dispatch = useDispatch();
+
   const handleResetPass = (email: string) => {
     dispatch(passwordForgotRequest());
 
@@ -24,13 +25,10 @@ const ResetPasswordPage = () => {
   }
 
   return (
-
     <div className={styles.reset}>
-
       <ResetPasswordForm onClick={handleResetPass} />
-
     </div>
   );
 }
 
-export default ResetPasswordPage
+export default ForgotPasswordPage
