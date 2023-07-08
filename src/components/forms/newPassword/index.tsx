@@ -15,7 +15,7 @@ const NewPasswordForm = ({onClick}:Props) => {
     <section  className={styles.form} >
       <h2>New password</h2>
       <Input type='password' label='Password' name='password' placeholder='New password' value={newPass} onChange={(e)=>setNewPass(e.target.value)}/>
-      <Input type='password' label='Confirm password' name='confirmPassword' placeholder='Confirm password'/>
+      {/* <Input type='password' label='Confirm password' name='confirmPassword' placeholder='Confirm password'/> */}
       <ButtonPrimarySecondary text='Reset' typeStyle='primary' type='submit' onClick={()=>onClick(newPass)} />
     </section>
   )
