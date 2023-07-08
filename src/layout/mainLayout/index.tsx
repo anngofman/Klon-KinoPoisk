@@ -5,6 +5,7 @@ import { Outlet } from 'react-router-dom'
 import Wrapper from '../../components/Wrapper'
 import { useSelector } from 'react-redux'
 import { ThemeSelector } from '../../store/theme/selectors'
+import Filters from '../../components/Filters'
 
 const MainLayout = () => {
   const { theme } = useSelector(ThemeSelector)
@@ -12,6 +13,7 @@ const MainLayout = () => {
     <div className={`${styles.layout} ${styles[`${theme}`]}`}>
       <Wrapper>
         <Header />
+        <Filters/>
         <div className={styles.content}>
           <SideBar className={styles.sideBar} />
           <div className={styles.outlet}>

@@ -1,0 +1,47 @@
+@import '../../consts/color.scss';
+
+.filters {
+  color: white;
+  width: 25%;
+  color: white;
+  width: 25%;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  right: 0;
+  z-index: 10;
+  background: $Background-Dark;
+  padding: 40px;
+  border-radius: 20px;
+
+  .flex {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+
+    input {
+      width: 100%;
+    }
+ 
+  }
+  .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 42px;
+  }
+
+  .filtersSetting {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 30px;
+    margin-top: 15px;
+    border-top: 1px solid $Background-Graphite;
+  }
+
+  * &.close {
+    display: none;
+  }
+}

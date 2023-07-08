@@ -1,10 +1,14 @@
-import { useState, ChangeEvent } from 'react'
+import { ChangeEvent } from 'react'
 import Button from '../../ui/button'
 import Input from '../../ui/input'
 import styles from './searchInput.module.scss'
 import FilterClose from '../../assets/icons/FilterIcon'
 import FilterOpen from '../../assets/icons/FilterOpen'
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { AppState } from '../../store'
+import { filtersCloseAction, filtersOpenAction } from '../../store/filters/actions'
 // import { useDispatch } from 'react-redux'
 
 type Props = {
@@ -12,9 +16,10 @@ type Props = {
 }
 
 const SearchInput = ({ className }: Props) => {
-  const [filter, setFilter] = useState(false)
+  // const [filter, setFilter] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
-  // const dispatch = useDispatch()
+const dispatch = useDispatch()
+const isOpen = useSelector((state:AppState)=>state.filters.isOpen)
   const nav = useNavigate()
   let timerId: ReturnType<typeof setTimeout>
 
@@ -28,11 +33,13 @@ const SearchInput = ({ className }: Props) => {
       console.log(valueSearch);
       
     }, 1000)
-
   }
 
   const handleOnClickFilter = () => {
-    setFilter(!filter)
+    // setFilter(!filter)
+    isOpen
+    ? dispatch(filtersCloseAction())
+    : dispatch(filtersOpenAction()) 
   }
 
   const onClickNav = () => {
@@ -43,7 +50,7 @@ const SearchInput = ({ className }: Props) => {
     <div className={`${styles.searchInput} ${className}`}>
       <Input className={styles.input} type='text' placeholder='Search...' onChange={handleSearchValue} name='search' onClick={onClickNav} />
       <Button className={styles.icon} onClick={handleOnClickFilter}>
-        {filter ? <FilterOpen /> : <FilterClose />}
+        {isOpen ? <FilterOpen /> : <FilterClose />}
       </Button>
     </div>
   )

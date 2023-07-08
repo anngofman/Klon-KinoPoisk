@@ -8,6 +8,8 @@ import LoaderReducer from "./loader/reducer"
 import authReducer from "./auth/reducer"
 import { SearchReducer } from "./search/reducer"
 import { ResetPassReducer } from './resetPass/reducer';
+import { FiltersReducer } from './filters/reducers';
+import TabsReducer from './tabs/reducer';
 
 const rootReducer = combineReducers({
   movies: MovieReducer,
@@ -17,7 +19,9 @@ const rootReducer = combineReducers({
   auth: authReducer,
   search: SearchReducer,
   forgotPass: ForgotPassReducer,
-  resetPass: ResetPassReducer
+  resetPass: ResetPassReducer,
+  filters: FiltersReducer,
+  tabs: TabsReducer
 })
 
 export const store = configureStore({
