@@ -11,7 +11,7 @@ const Movies = ({ movies, isTrends }: Props) => {
   return (
     <div className={styles.movies}>
       {movies.map((film, index) => {
-        const { id, name, genres, poster, rating, favorites } = { ...film }
+        const { id, name, genres, poster, rating } = { ...film }
         return (<Movie
           key={index}
           id={id}
@@ -19,7 +19,7 @@ const Movies = ({ movies, isTrends }: Props) => {
           genres={genres}
           poster={poster}
           rating={rating}
-          favorites={favorites}
+          // favorites={favorites}
           isTrends={isTrends!}
         />)
       })}

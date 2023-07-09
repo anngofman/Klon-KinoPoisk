@@ -1,8 +1,8 @@
 export const SELECT_TAB = 'SELECT_TAB'
 
-export const selectTab = (tabId:number) => {
+export const selectTab = (tab:string) => {
   return {
     type: SELECT_TAB,
-    payload: tabId
+    payload: tab
   }
 }

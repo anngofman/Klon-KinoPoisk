@@ -24,12 +24,12 @@ export const loadTrendMovies = (limit: number, page: number): AppThunk => {
 	}
 }
 
-export const loadMovies = (limit: number, page: number): AppThunk => {
+export const loadMovies = (limit: number, page: number, year?: string, rating?: string, genre?: string, countrie?: string, name?:string, sortField?:string): AppThunk => {
 	
 	return async (dispatch) => {
 		//dis загрузка
 		dispatch(startLoading())
-		const movies = (await getMovies(limit, page)).data.docs
+		const movies = (await getMovies(limit, page, year, rating, genre, countrie, name, sortField)).data.docs
 		dispatch(setMovies(movies))
 		dispatch(stopLoading())
 		//dis откл

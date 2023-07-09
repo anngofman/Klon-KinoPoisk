@@ -2,7 +2,7 @@ import { SELECT_TAB } from "./actions";
 import { TabsActionType, TabsStateType } from "./types";
 
 const initialState:TabsStateType = {
-  selectedTab: null,
+  selectedTab: '',
 };
 
 const TabsReducer = (state:TabsStateType = initialState, action:TabsActionType):TabsStateType => {

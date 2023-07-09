@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom'
 import ButtonGroup from '../../ui/buttonGroup'
 import IMDbIcon from '../../assets/icons/IMDbIcon'
 import TableInfoMovie from '../TableInfoMovie'
+import { addToFavorites } from '../../store/favoritesMovies/actions'
 
 type Props = {
   children: ReactNode
@@ -34,13 +35,23 @@ const SingleMovie = ({ children }: Props) => {
     ratingKp = 'green'
   }
 
+  const handleOnClick = () => {
+    movie && dispatch(addToFavorites({
+      id: movie?.id,
+      name: movie?.name,
+      genres: movie?.genres,
+      poster: movie?.poster,
+      rating: movie?.rating
+    }))
+  }
+
   return (
     <>
       <div className={styles.poster}>
         <div className={styles.img}>
           <img src={movie?.poster.url} alt='poster' />
         </div>
-        <ButtonGroup />
+        <ButtonGroup onClick={handleOnClick} />
       </div>
       <div className={styles.wrappText}>
         <h6>

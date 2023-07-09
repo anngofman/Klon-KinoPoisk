@@ -53,9 +53,4 @@ export type TypeSingleMovie = {
   favorites: boolean
 }
 
-// Producers: []
-// actors: []
-// director: []
-// writers: []
-
-export type TypeMovies = Pick<TypeSingleMovie, 'id' | 'name' | 'genres' | 'poster' | 'rating' | 'favorites'>
+export type TypeMovies = Pick<TypeSingleMovie, 'id' | 'name' | 'genres' | 'poster' | 'rating' >

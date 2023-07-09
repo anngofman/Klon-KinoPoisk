@@ -1,8 +1,10 @@
+import { useSelector } from 'react-redux'
 import { NameType, PosterType, RatingType } from '../../api/shaped/types'
 import FavoritesIcon from '../../assets/icons/FavoritesIcon'
 import TrendsIcon from '../../assets/icons/TrendsIcon'
 import Link from '../../ui/link'
 import styles from './movie.module.scss'
+import { AppState } from '../../store'
 
 type Props = {
   id: number
@@ -22,16 +24,15 @@ const Movie = ({ id, name, genres, poster, rating, favorites, isTrends }: Props)
   else if (rating && (rating.kp > 5 && rating.kp < 7)) {
     ratingKp = 'yellow'
   } else { ratingKp = 'green' }
-
+  const fav = useSelector((state: AppState) => state.favorites)
+  const filmFav = fav.find(m => m.id === id)
 
   return (
     <Link to={`/movie/${id}`} className={styles.movie}>
       <div className={styles.imageBlock}>
-
-        <img src={poster.url} alt='movie' />
+        {poster && <img src={poster.url} alt='movie' />}
         {rating ?
           <div className={styles.imageConnect}>
-
             {isTrends
               ? <span className={styles.trend}>
                 <TrendsIcon />{rating?.kp}
@@ -39,13 +40,15 @@ const Movie = ({ id, name, genres, poster, rating, favorites, isTrends }: Props)
               : <span className={`${styles.rating}
               ${styles[ratingKp]}`}>{rating?.kp}</span>
             }
-            <span className={styles.fav}>
-              <FavoritesIcon />
-            </span>
+            {filmFav
+              ? <span className={styles.fav}>
+                <FavoritesIcon />
+              </span>
+              : ''
+            }
           </div>
           : ''
         }
-
       </div>
       <div className={styles.textBlock}>
         <h4>{name}</h4>
@@ -59,7 +62,6 @@ const Movie = ({ id, name, genres, poster, rating, favorites, isTrends }: Props)
         </h6>
       </div>
     </Link>
-
   )
 }
 

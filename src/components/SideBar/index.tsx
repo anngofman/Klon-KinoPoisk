@@ -5,28 +5,24 @@ import FavoritesIcon from '../../assets/icons/FavoritesIcon'
 import SerringIcon from '../../assets/icons/SerringIcon'
 import Link from '../../ui/link'
 import CopyRight from '../CopyRight'
-// import { useDispatch } from 'react-redux'
-// import { setDefaultPage } from '../../store/movies/actions'
+import { useSelector } from 'react-redux'
+import { AppState } from '../../store'
 
 type Props = {
   className: string
 }
 
 const SideBar = ({ className }: Props) => {
-  // const dispatch = useDispatch()
-// const handle = () =>{
-//   dispatch(setDefaultPage())
-// }
+  const fav = useSelector((state: AppState) => state.favorites)
   return (
     <div className={`${styles.sideBar} ${className}`}>
       <nav>
-        <Link to='/movies'  >
+        <Link to='/movies' onClick={() => console.log(fav)} >
           <HomeIcon />
           Home
         </Link>
         <Link to='/trends' >
           <TrendsIcon />
-          
           Trends
         </Link>
         <Link to='/favorites' >

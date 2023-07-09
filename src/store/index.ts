@@ -10,6 +10,8 @@ import { SearchReducer } from "./search/reducer"
 import { ResetPassReducer } from './resetPass/reducer';
 import { FiltersReducer } from './filters/reducers';
 import TabsReducer from './tabs/reducer';
+import { favoritesReducer } from './favoritesMovies/reducer';
+import { loadStateFromLocalStorage, saveStateToLocalStorage } from '../localStorage';
 
 const rootReducer = combineReducers({
   movies: MovieReducer,
@@ -21,14 +23,22 @@ const rootReducer = combineReducers({
   forgotPass: ForgotPassReducer,
   resetPass: ResetPassReducer,
   filters: FiltersReducer,
-  tabs: TabsReducer
+  tabs: TabsReducer,
+  favorites: favoritesReducer
 })
 
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(thunkMiddleware)
+    getDefaultMiddleware().concat(thunkMiddleware),
+  preloadedState: loadStateFromLocalStorage()
 })
+
+store.subscribe(() => {
+  const state = store.getState();
+  const { favorites } = state;
+  saveStateToLocalStorage(favorites );
+});
 
 export type AppState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch

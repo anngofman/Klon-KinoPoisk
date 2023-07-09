@@ -14,7 +14,7 @@ const TableInfoMovie = () => {
         </tr>
         <tr>
           <th>Released</th>
-          <td>{movie?.premiere.world}</td>
+          <td>{movie?.premiere && movie?.premiere.world}</td>
         </tr>
         <tr>
           <th>BoxOffice</th>

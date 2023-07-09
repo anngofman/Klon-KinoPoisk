@@ -2,15 +2,17 @@ import FavoritesIcon from '../../assets/icons/FavoritesIcon'
 import ShareIcon from '../../assets/icons/ShareIcon'
 import Button from '../button'
 import styles from './btnGroup.module.scss'
-
-const ButtonGroup = () => {
+type Props = {
+  onClick?: () => void
+}
+const ButtonGroup = ({onClick}:Props) => {
   return (
     <div className={styles.btn}>
-      <Button>
-        <FavoritesIcon/>
+      <Button onClick={onClick }>
+        <FavoritesIcon />
       </Button>
       <Button>
-        <ShareIcon/>
+        <ShareIcon />
       </Button>
     </div>
   )

@@ -4,42 +4,46 @@ import Input from '../../ui/input'
 import styles from './searchInput.module.scss'
 import FilterClose from '../../assets/icons/FilterIcon'
 import FilterOpen from '../../assets/icons/FilterOpen'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { AppState } from '../../store'
 import { filtersCloseAction, filtersOpenAction } from '../../store/filters/actions'
-// import { useDispatch } from 'react-redux'
 
 type Props = {
   className?: string
 }
 
 const SearchInput = ({ className }: Props) => {
-  // const [filter, setFilter] = useState(false)
+  const location = useLocation()
+  console.log(location.pathname)
   const [searchParams, setSearchParams] = useSearchParams()
-const dispatch = useDispatch()
-const isOpen = useSelector((state:AppState)=>state.filters.isOpen)
+  const dispatch = useDispatch()
+  const isOpen = useSelector((state: AppState) => state.filters.isOpen)
   const nav = useNavigate()
   let timerId: ReturnType<typeof setTimeout>
 
   const handleSearchValue = (e: ChangeEvent<HTMLInputElement>) => {
     const valueSearch = e.target.value
     clearTimeout(timerId)
-    timerId =  setTimeout(() => {
+    timerId = setTimeout(() => {
       setSearchParams({
         'query': valueSearch
       })
       console.log(valueSearch);
-      
+
     }, 1000)
   }
 
   const handleOnClickFilter = () => {
-    // setFilter(!filter)
+    if (location.pathname !== '/') {
+      nav('/')
+    }
+
+
     isOpen
-    ? dispatch(filtersCloseAction())
-    : dispatch(filtersOpenAction()) 
+      ? dispatch(filtersCloseAction())
+      : dispatch(filtersOpenAction())
   }
 
   const onClickNav = () => {
