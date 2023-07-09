@@ -4,21 +4,22 @@ import { AppDispatch, AppState } from '../../store'
 import { useSelector } from 'react-redux'
 import { ReactNode, useEffect } from 'react'
 import { loadSingleMovie } from '../../store/singleMovie/actions'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import ButtonGroup from '../../ui/buttonGroup'
 import IMDbIcon from '../../assets/icons/IMDbIcon'
 import TableInfoMovie from '../TableInfoMovie'
 import { addToFavorites } from '../../store/favoritesMovies/actions'
+import { useAuth } from '../../hooks/useAuth'
 
 type Props = {
   children: ReactNode
 }
 
 const SingleMovie = ({ children }: Props) => {
-
+  const { isAuth } = useAuth()
   const { movieId } = useParams()
   const id = Number(movieId)
-
+  const nav = useNavigate()
   const dispatch = useDispatch<AppDispatch>()
   const movie = useSelector((state: AppState) => state.singleMovie.movie)
 
@@ -43,15 +44,19 @@ const SingleMovie = ({ children }: Props) => {
       poster: movie?.poster,
       rating: movie?.rating
     }))
+    if (!isAuth) {
+      nav('auth/signIn')
+    }
   }
-
+  const fav = useSelector((state: AppState) => state.favorites)
+  const filmFav = fav.find(m => m.id === id)
   return (
     <>
       <div className={styles.poster}>
         <div className={styles.img}>
           <img src={movie?.poster.url} alt='poster' />
         </div>
-        <ButtonGroup onClick={handleOnClick} />
+        <ButtonGroup onClick={handleOnClick} fav={Boolean(filmFav)} />
       </div>
       <div className={styles.wrappText}>
         <h6>

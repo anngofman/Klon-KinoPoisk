@@ -3,4 +3,21 @@
 .button {
   background-color: transparent;
   height: 56px;
+
+  &.disabled {
+    background-color: $Contextual-Light;
+    // svg{path{fill:black}}
+    border-radius: 10px 0 0 10px;
+    svg:hover {
+      & * {
+        stroke: none;
+      }
+    }
+  }
+
+  svg:hover {
+    & * {
+      stroke: $Contextual-Write;
+    }
+  }
 }

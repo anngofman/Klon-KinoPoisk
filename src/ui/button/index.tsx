@@ -5,12 +5,13 @@ type Props = {
   className?: string
   children: ReactNode
   id?: number
+  isDisabled?: boolean
 }
 
-const Button = ({ onClick, className, children }: Props) => {
+const Button = ({ onClick, className, children,  isDisabled}: Props) => {
   return (
-    <button className={`${className} ${styles.button} `}
-      onClick={onClick}>
+    <button className={`${className} ${styles.button} ${styles[`${isDisabled? 'disabled':''}`]}`}
+      onClick={onClick} disabled={isDisabled}>
       {children}
     </button>
   )

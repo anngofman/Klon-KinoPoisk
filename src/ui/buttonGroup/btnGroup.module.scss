@@ -8,11 +8,10 @@
   button {
     width: 100%;
 
-    svg:hover {
-      & * {
-        stroke: $Contextual-Write;
-      }
-    }
+  &.fav{
+    background-color: $System-Primary;
+    border-radius: 10px 0 0 10px;
+  }
   }
 
   button:not(:last-child) {

@@ -11,14 +11,26 @@ import ButtonPrimarySecondary from '../../ui/button/buttonPrimaryorSeondary'
 import { useForm } from 'react-hook-form'
 import { useSearchParams } from 'react-router-dom'
 import { setDefaultPage } from '../../store/movies/actions'
+import { ClearSelectTab } from '../../store/tabs/actions'
+type Props ={
+  forwardedRef: React.RefObject<HTMLDivElement>
+}
 
-const Filters = () => {
+
+const Filters = ({forwardedRef}:Props) => {
   const tabs = ['rating.kp', 'year']
   const isOpen = useSelector((state: AppState) => state.filters.isOpen)
   const dispatch = useDispatch()
   const [searchParams, setSearchParams] = useSearchParams()
   const mov = useSelector((state: AppState) => state.movies.docs)
   const { register, handleSubmit } = useForm()
+
+  const handleOnClickClear = () =>{
+    dispatch(ClearSelectTab())
+    if (mov.length) {
+      dispatch(setDefaultPage())
+    }
+  }
 
   const onSubmit = (data: any) => {
     console.log(data);
@@ -49,7 +61,7 @@ const Filters = () => {
   }
 
   return (
-    <div className={`${styles.filters} ${styles[`${!isOpen ? 'close' : ''}`]}`}>
+    <section ref={forwardedRef} className={`${styles.filters} ${styles[`${!isOpen ? 'close' : ''}`]}`}>
       <div className={`${styles.flex} ${styles.title}`}>
         <h3>
           Filters
@@ -81,11 +93,11 @@ const Filters = () => {
           </div>
         </div>
         <div className={styles.btn}>
-          <ButtonPrimarySecondary type='button' typeStyle='secondary' text='Clear filter' />
+          <ButtonPrimarySecondary type='button' typeStyle='secondary' text='Clear filter' onClick={handleOnClickClear}/>
           <ButtonPrimarySecondary type='submit' typeStyle='primary' text='Show results' />
         </div>
       </form>
-    </div>
+    </section>
   )
 }
 

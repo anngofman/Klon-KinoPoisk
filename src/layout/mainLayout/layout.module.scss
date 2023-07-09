@@ -40,10 +40,21 @@
     form>div,
     section {
       background-color: $Contextual-Write;
+      svg{path{fill:black}}
     }
 
     section {
       border: 2px solid $Contextual-Light;
+    }
+    form,
+    label {
+      background-color: $Contextual-Write;
+      color: $Background-Dark;
+
+      input:not(input[type='button']):not(input[type='submit']) {
+        background-color: $Contextual-Write;
+        border: 2px solid $Contextual-Light;
+      }
     }
   }
 }

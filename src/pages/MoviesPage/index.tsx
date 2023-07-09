@@ -16,10 +16,8 @@ const MoviesPage = () => {
   const [page, setPage] = useState(1)
   const [searchParams, setSearchParams] = useSearchParams()
   const params = Object.fromEntries(searchParams)
-  console.log(params)
   const tab = useSelector((state: AppState) => state.tabs.selectedTab)
-  console.log(typeof(tab))
-  
+
   const loadMorePosts = () => {
     setPage((prevState) => prevState + 1)
   }
