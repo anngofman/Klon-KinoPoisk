@@ -12,9 +12,16 @@
     grid-template-columns: repeat(6, 1fr);
     gap: 40px;
     grid-template-areas: 'sideBar outlet outlet outlet outlet outlet';
+    @media (max-width:1280px) {
+      grid-template-areas: 'outlet outlet outlet outlet outlet outlet'; 
+    }
 
     .sideBar {
       grid-area: sideBar;
+
+      @media (max-width:1280px) {
+        display: none;
+      }
     }
 
     .outlet {
@@ -40,12 +47,18 @@
     form>div,
     section {
       background-color: $Contextual-Write;
-      svg{path{fill:black}}
+
+      svg {
+        path {
+          fill: black
+        }
+      }
     }
 
     section {
       border: 2px solid $Contextual-Light;
     }
+
     form,
     label {
       background-color: $Contextual-Write;

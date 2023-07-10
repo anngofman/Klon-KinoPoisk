@@ -12,18 +12,30 @@ import { useForm } from 'react-hook-form'
 import { useSearchParams } from 'react-router-dom'
 import { setDefaultPage } from '../../store/movies/actions'
 import { ClearSelectTab } from '../../store/tabs/actions'
+import {useState, ChangeEvent} from 'react'
 type Props ={
   forwardedRef: React.RefObject<HTMLDivElement>
 }
 
 
 const Filters = ({forwardedRef}:Props) => {
+  const [valueYear, setValueYear] = useState('')
+  const [valueRating, setValueRating] = useState('')
   const tabs = ['rating.kp', 'year']
   const isOpen = useSelector((state: AppState) => state.filters.isOpen)
   const dispatch = useDispatch()
   const [searchParams, setSearchParams] = useSearchParams()
   const mov = useSelector((state: AppState) => state.movies.docs)
   const { register, handleSubmit } = useForm()
+
+  const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setValueYear(event.target.value);
+
+  }
+  const handleOnChangeRating = (event: ChangeEvent<HTMLInputElement>) => {
+    setValueRating(event.target.value);
+
+  }
 
   const handleOnClickClear = () =>{
     dispatch(ClearSelectTab())
@@ -81,12 +93,12 @@ const Filters = ({forwardedRef}:Props) => {
             <Input {...register('genre')} type='text' label='Genre' />
           </div>
           <div className={styles.flex}>
-            <Input {...register('yearFrom')} type='number' label='Years' placeholder='From' />
-            <Input {...register('yearTo')} type='number' label='' placeholder='To' />
+            <Input {...register('yearFrom')} type='number' label='Years' placeholder='From' value={valueYear} onChange={handleOnChange}/>
+            <Input {...register('yearTo')} type='number' label='' placeholder='To' disabled={!valueYear}/>
           </div>
           <div className={styles.flex}>
-            <Input {...register('ratingFrom')} type='number' label='Rating' placeholder='From' />
-            <Input {...register('ratingTo')} type='number' label='' placeholder='To' />
+            <Input {...register('ratingFrom')} type='number' label='Rating' placeholder='From' value={valueRating} onChange={handleOnChangeRating}/>
+            <Input {...register('ratingTo')} type='number' label='' placeholder='To' disabled={!valueRating}/>
           </div>
           <div>
             <Input {...register('country')} type='select' label='Country' placeholder='Select country' />

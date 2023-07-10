@@ -4,4 +4,7 @@
   display: flex;
   color: $Contextual-Write;
   gap: 42px;
+  @media (max-width:764px) {
+    flex-direction: column;
+  }
 }
