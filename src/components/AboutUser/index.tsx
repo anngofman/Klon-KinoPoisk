@@ -6,9 +6,15 @@ import Link from '../../ui/link'
 import { useAuth } from '../../hooks/useAuth'
 
 const AboutUser = () => {
-  const { isAuth, email } = useAuth()
-  const userName = email.split('@')[0];
+  const { isAuth, email, name } = useAuth()
+  let userName
+  if(name){
+    userName = name
+  } else {
+    userName = email.split('@')[0];
+  }
   const firstTwoLetters = userName.substring(0, 2).toUpperCase();
+ 
 
   return (
     <>

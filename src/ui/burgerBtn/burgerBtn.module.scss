@@ -1,0 +1,16 @@
+@import '../../consts/color.scss';
+
+.authorized_icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $System-Primary;
+  border-radius: 10px;
+  display: none;
+
+  @media (max-width:1280px) {
+    display: block;
+  }
+}

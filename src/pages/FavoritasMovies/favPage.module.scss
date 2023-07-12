@@ -3,10 +3,14 @@
 .favPage {
   flex-direction: column;
   display: flex;
-  // justify-content: center;
-  // align-items: center;
   height: 100%;
-  gap:40px;
+  gap: 40px;
+
+  .favoritesMovie {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+  }
 
   .emptyFavorites {
     display: flex;
@@ -21,10 +25,4 @@
     font-weight: 600;
     line-height: 32px;
   }
-.favoritesMovie{
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-}
-
 }

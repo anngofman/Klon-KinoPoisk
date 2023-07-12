@@ -2,7 +2,8 @@
 export type UserType = {
   email: string 
   id: string;
-  token: string
+  token: string,
+  name:string | null
 };
 
 export type LoginActionType = {
@@ -17,5 +18,6 @@ export type LogoutActionType = {
 export type LoginStateType = {
   email: string;
   token: string
-  id: string;
+  id: string,
+  name:string | null
 };

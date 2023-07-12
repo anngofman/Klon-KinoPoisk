@@ -7,6 +7,10 @@
   background-color: $Background-Black;
   color: white;
 
+  @media (max-width:1280px) {
+    display: none;
+  }
+
   .about {
     display: flex;
     align-items: center;
@@ -27,6 +31,9 @@
 .signIn {
   color: $Contextual-Write;
   justify-content: space-between;
+  @media (max-width:1280px) {
+    display: none;
+  }
 
   .icon {
     width: 48px;

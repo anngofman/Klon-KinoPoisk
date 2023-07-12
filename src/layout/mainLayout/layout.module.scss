@@ -2,9 +2,9 @@
 
 .layout {
   background-color: $Background-Black;
-  // height: 100%;
+  min-height: 100%;
   width: 100%;
-  // max-height: max-content;
+  max-height: max-content;
 
   .content {
     height: max-content;
@@ -31,6 +31,13 @@
 
   &.light {
     background-color: $Contextual-Write;
+    header{
+      svg{
+        path{
+          fill: black;
+        }
+      }
+    }
 
     h4,
     h3,
@@ -67,6 +74,9 @@
       input:not(input[type='button']):not(input[type='submit']) {
         background-color: $Contextual-Write;
         border: 2px solid $Contextual-Light;
+      }
+      section{
+        background-color: $Contextual-Write;
       }
     }
   }

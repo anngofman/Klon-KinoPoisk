@@ -1,9 +1,10 @@
 .header {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-areas: 'logo search search search search';
+  grid-template-areas: 'logo search search search search burger';
   gap:40px;
   padding-bottom: 64px;
+  align-items: center;
 
   .logo {
     grid-area: logo;
@@ -15,5 +16,13 @@
   .search {
     grid-area: search;
   }
-
+  .burger {
+    grid-area: burger;
+  }
+  @media (max-width:700px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,fr);
+    grid-template-areas: 'logo logo burger'
+    'search search search';
+  }
 }

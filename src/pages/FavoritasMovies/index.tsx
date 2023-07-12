@@ -25,10 +25,10 @@ const FavoritesPage = () => {
   return (
     <div className={styles.favPage}>
       {isAuth
-        ? <div className={styles.favoritesMovie}>
-          {favorites 
+        ? <div className={`${styles.favoritesMovie} ${styles.auth}`}>
+          {favorites.length 
           ? <Movies movies={favorites} /> 
-          : <div className={styles.emptyFavorites}>
+          : <div className={`${styles.emptyFavorites}`}>
             <img src={image} alt='emptyMovie' />
             <h3>Empty state text</h3>
           </div>}

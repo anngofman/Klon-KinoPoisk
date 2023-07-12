@@ -17,6 +17,7 @@ const SearchPage = () => {
   const [page, setPage] = useState(1)
   const [searchParams] = useSearchParams()
   const params = Object.fromEntries(searchParams)
+
   const loadMorePosts = () => {
     setPage((prevState) => prevState + 1)
   }
@@ -27,14 +28,12 @@ const SearchPage = () => {
       dispatch(setInitialState()); // Вызов экшна для сброса состояния при размонтировании компонента
     };
   }, [dispatch]);
-  console.log(params)
+
   useEffect(() => {
     let limit = 10;
     if (params.query) {
       dispatch(loadSearchMovies(limit, page, params.query));
-      console.log(params.query);
     }
-
   }, [page, dispatch, params.query]);
 
   if (!movies.length) {

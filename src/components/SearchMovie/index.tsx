@@ -1,7 +1,9 @@
+import { useSelector } from 'react-redux'
 import FavoritesIcon from '../../assets/icons/FavoritesIcon'
 import TrendsIcon from '../../assets/icons/TrendsIcon'
 import Link from '../../ui/link'
 import styles from './searchMovie.module.scss'
+import { AppState } from '../../store'
 
 type Props = {
   id: number
@@ -14,6 +16,9 @@ type Props = {
 }
 
 const SearchMovie = ({ id, name, genres, poster, rating, favorites, isTrends }: Props) => {
+  const fav = useSelector((state: AppState) => state.favorites)
+  const filmFav = fav.find(m => m.id === id)
+
   let ratingKp = ''
   if (rating && rating < 5) {
     ratingKp = 'orange'
@@ -38,9 +43,12 @@ const SearchMovie = ({ id, name, genres, poster, rating, favorites, isTrends }: 
               : <span className={`${styles.rating}
               ${styles[ratingKp]}`}>{rating}</span>
             }
-            <span className={styles.fav}>
-              <FavoritesIcon />
-            </span>
+            {filmFav
+              ? <span className={styles.fav}>
+                <FavoritesIcon />
+              </span>
+              : ''
+            }
           </div>
           : ''
         }
